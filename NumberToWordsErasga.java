@@ -13,7 +13,7 @@ public class NumberToWordsErasga
 		
 		
 		// I store only the Ones digit and the tens
-		String []Ones = {"One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourthe",
+		String []Ones = {"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourthe",
 		"Fifteen","Sixteen","Seventeen","Eighteen", "Nineteen"};
 		
 		String []Tens = {"Ten","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
@@ -26,7 +26,7 @@ public class NumberToWordsErasga
 		// Gets the first number I used the substring to get the first value
 		int firstDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(0,1));
 		// Then I use the converted number and then use it as an index
-		System.out.println( Ones[inputNumber-1]);
+		System.out.println( Ones[inputNumber]);
 		}
 		
 		// Determines the digit position
@@ -39,7 +39,7 @@ public class NumberToWordsErasga
    		int secondDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(1,2));
    	
    		// Then use the 2 different integers to determine the position
-		System.out.println(Tens[firstDigitKo-1] +" " + Ones[secondDigitKo-1]);
+		System.out.println(Tens[firstDigitKo-1] +" " + Ones[secondDigitKo]);
 		}
 		
 		// Determisn the digit position
@@ -52,7 +52,7 @@ public class NumberToWordsErasga
    		int thirdDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(2,3));
    		
    		// Then I use the 3 different integers to determine the position and I added hundreds
-   		System.out.println(Ones[firstDigitKo-1] + " Hundred " + Tens[secondDigitKo-1] + " " + Ones[thirdDigitKo-1]);
+   		System.out.println(Ones[firstDigitKo] + " Hundred " + Tens[secondDigitKo-1] + " " + Ones[thirdDigitKo]);
 		}
 		
 		// Determines the position
@@ -63,7 +63,7 @@ public class NumberToWordsErasga
    		int thirdDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(2,3));
    		
    		// Since the only limit is 1000 I only get the first digit
-   		System.out.println(Ones[firstDigitKo-1] + " Thousand ");
+   		System.out.println(Ones[firstDigitKo] + " Thousand ");
 		}
 		
 	}
