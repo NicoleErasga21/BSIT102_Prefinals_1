@@ -8,31 +8,39 @@ public class NumberToWordsErasga
 	{
 	
 		Scanner numberScanner = new Scanner(System.in);
+		boolean isGoing = true;
+		
+		while (isGoing = true) 
+		{
 		System.out.println("Input a Number:");
 		int inputNumber = numberScanner.nextInt();
 		
 		
 		// I store only the Ones digit and the tens
-		String []Ones = {"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourthe",
+		String []Ones = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen",
 		"Fifteen","Sixteen","Seventeen","Eighteen", "Nineteen"};
 		
 		String []Tens = {"Ten","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
 		
 		
-		// Determines the digit position
-		if (inputNumber <= 19)
-		{
 		
-		// Gets the first number I used the substring to get the first value
-		int firstDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(0,1));
-		// Then I use the converted number and then use it as an index
+		// Determine if the user input is 0
+		if (inputNumber == 0)
+		{
+			System.out.println("Zero");
+			
+		}
+		// Determines the digit position
+		else if (inputNumber <= 19)
+		{
+		// Get the user inputted number then display
 		System.out.println( Ones[inputNumber]);
 		}
 		
 		// Determines the digit position
 		else if(inputNumber <= 99)
 		{
-	
+			
 		// Since there are 2 position I used 2 conversion
 		// I get the first and second number into 2 different integers
    		int firstDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(0,1));
@@ -42,7 +50,7 @@ public class NumberToWordsErasga
 		System.out.println(Tens[firstDigitKo-1] +" " + Ones[secondDigitKo]);
 		}
 		
-		// Determisn the digit position
+		// Determine the digit position
 		else if(inputNumber <= 999)
 		{
 		
@@ -56,16 +64,15 @@ public class NumberToWordsErasga
 		}
 		
 		// Determines the position
-		else 
+		else if (inputNumber <=1000) 
 		{
 		int firstDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(0,1));
-   		int secondDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(1,2));
-   		int thirdDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(2,3));
    		
    		// Since the only limit is 1000 I only get the first digit
    		System.out.println(Ones[firstDigitKo] + " Thousand ");
 		}
 		
+		}
 	}
  
     
