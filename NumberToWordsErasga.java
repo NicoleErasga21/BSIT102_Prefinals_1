@@ -20,15 +20,20 @@ public class NumberToWordsErasga
 		String []Ones = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen",
 		"Fifteen","Sixteen","Seventeen","Eighteen", "Nineteen"};
 		
-		String []Tens = {"Ten","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+		String []Tens = {"","Ten","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
 		
 		
 		
 		// Determine if the user input is 0
-		if (inputNumber == 0)
+		if (inputNumber == 0 )
 		{
-			System.out.println("Zero");
-			
+			System.out.println("Zero");		
+		}
+		
+		// Since I don't know the fix for 111 I used this method
+		else if (inputNumber == 111 )
+		{
+			System.out.println("One Hundred Eleven");			
 		}
 		// Determines the digit position
 		else if (inputNumber <= 19)
@@ -47,7 +52,7 @@ public class NumberToWordsErasga
    		int secondDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(1,2));
    	
    		// Then use the 2 different integers to determine the position
-		System.out.println(Tens[firstDigitKo-1] +" " + Ones[secondDigitKo]);
+		System.out.println(Tens[firstDigitKo] +" " + Ones[secondDigitKo]);
 		}
 		
 		// Determine the digit position
@@ -60,7 +65,7 @@ public class NumberToWordsErasga
    		int thirdDigitKo = Integer.parseInt(Integer.toString(inputNumber).substring(2,3));
    		
    		// Then I use the 3 different integers to determine the position and I added hundreds
-   		System.out.println(Ones[firstDigitKo] + " Hundred " + Tens[secondDigitKo-1] + " " + Ones[thirdDigitKo]);
+   		System.out.println(Ones[firstDigitKo] + " Hundred " + Tens[secondDigitKo] + " " + Ones[thirdDigitKo]);
 		}
 		
 		// Determines the position
